@@ -21,9 +21,9 @@ export const Header = () => {
   }
 
   return (
-    <div className='w-full h-20  flex justify-between items-center px-12'>
+    <div className='w-full h-20  flex justify-between items-center sm:px-12 p-5'>
         <NavLink to='/'>
-          <img className='h-10 w-full' src={img} alt="img" />
+          <img className='sm:h-10 h-8 w-full' src={img} alt="img" />
         </NavLink>
         {
           user ? 
