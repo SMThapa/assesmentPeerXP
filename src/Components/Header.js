@@ -1,8 +1,10 @@
-import { NavLink, useLocation  } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate  } from 'react-router-dom';
 import img from '../asset/01.png';
 import { useEffect, useState } from 'react';
 
 export const Header = () => {
+
+  const navigate = useNavigate();
 
   const theUser = JSON.parse(localStorage.getItem('currentUser'))
   //to run useEffect on every path changed
@@ -18,6 +20,7 @@ export const Header = () => {
   const handleLogout = () =>{
     localStorage.clear()
     setUser(false)
+    navigate('/')
   }
 
   return (

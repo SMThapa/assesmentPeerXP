@@ -1,4 +1,5 @@
 import { useTitle } from "../hook/useTitle"
+import { NavLink } from "react-router-dom"
 
 export const Hero = () => {
 
@@ -11,10 +12,11 @@ export const Hero = () => {
           <div className="flex">
               {/* <h1>Filter by Date of Expense</h1>
               <h1>Search Expnces by Name</h1> */}
-              <h1>New Expense</h1>
+              <NavLink to="/addExpense">
+                <h1>+ New Expense</h1>
+              </NavLink>
           </div>
-      </div>
-        
+      </div>        
     </div>
   )
 }
