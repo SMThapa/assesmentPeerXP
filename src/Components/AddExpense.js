@@ -1,20 +1,30 @@
 import { useTitle } from "../hook/useTitle"
+import { useStates } from "../context/StateContext";
+import { useNavigate } from "react-router-dom";
 
 export const AddExpense = () => {
 
   useTitle('Create Expense')
 
+  const navigate = useNavigate()
+  const {peopleList, setList} = useStates()
+
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+
   const handleSubmit = (e) =>{
-      e.preventDefault();
-      const userExpenseInfo = {
-          username: e.target.name.value,
-          category: e.target.category.value,
-          date: e.target.date.value,
-          amout: e.target.amout.value,
-          description: e.target.description.value
-      }
-      
-      localStorage.setItem('users', JSON.stringify(...userExpenseInfo))
+    e.preventDefault();
+    setList([...peopleList, {
+      username: e.target.name.value,
+        category: e.target.category.value,
+        date: e.target.date.value,
+        amout: e.target.amount.value,
+        description: e.target.description.value,
+        createdBy: currentUser ? currentUser.username : "PeerXP"
+    }])
+
+    
+    navigate('/')
+    // localStorage.setItem('users', JSON.stringify(...userExpenseInfo))
   }
 
   return (

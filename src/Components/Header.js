@@ -31,7 +31,7 @@ export const Header = () => {
         {
           user ? 
           <div className='flex'>
-            <h1>{theUser.username} |</h1>
+            <h1>&#8226; {theUser.username} |</h1>
             <button onClick={handleLogout} className='text-sm text-red-500'>&nbsp;Logout</button>
           </div>  :
           <NavLink to='/login'>
