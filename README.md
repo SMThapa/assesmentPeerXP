@@ -27,3 +27,8 @@ A Basic email and password-based login form. Users can sign in using their email
 
 ## Technology Stack
 - ReactJS, TailwindCSS, SweetAlert2
+
+
+Thank you for considering my submission!
+
+
