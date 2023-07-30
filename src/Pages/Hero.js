@@ -7,7 +7,7 @@ import { TableComponent } from "../Components/TableComponent"
 export const Hero = () => {
 
   //changes title 
-  useTitle('My Expense Manager ')
+  useTitle('View Expenses')
 
   //states from useContext
   const {usersList, dummyList, setDummyList} = useStates();
