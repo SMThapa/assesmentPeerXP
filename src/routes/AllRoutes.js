@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Hero, LoginPage, AddExpense, EditExpense} from "../Components";
+import { AddExpense, EditExpense, Hero, LoginPage } from "../Pages";
 
 export const AllRoutes = () => {
   return (

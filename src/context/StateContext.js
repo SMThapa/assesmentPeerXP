@@ -3,13 +3,13 @@ import { createContext, useContext, useState } from "react";
 const StateContext = createContext();
 
 export const StateProvider = ({children}) =>{
-    const [people, setPeople] = useState('');
-    const [peopleList, setList] = useState([]);
+    const [user, setUser] = useState('');
+    const [usersList, setList] = useState([]);
 
     const states = {
-        people,
-        setPeople,
-        peopleList,
+        user,
+        setUser,
+        usersList,
         setList
     }
 
