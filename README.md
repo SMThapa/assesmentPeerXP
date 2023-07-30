@@ -3,6 +3,9 @@
 
 The assessment required to build a Personal Finance Management application UI that should allow users to record and track their expenses.
 
+### Timeframe:
+
+The assessment was completed within the given timeframe of one week.
 
 ## Timeframe
 The assessment was completed within the given timeframe of 3 days.
@@ -25,5 +28,9 @@ A Basic email and password-based login form. Users can sign in using their email
 ### Deleting Expenses
 - When deleting an expense, a confirmation prompt will be shown before the Expense is deleted from the database.
 
+
 ## Technology Stack
 - ReactJS, TailwindCSS, SweetAlert2
+
+
+- Thank you for considering my submission!
