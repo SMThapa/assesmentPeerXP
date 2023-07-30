@@ -4,6 +4,9 @@
 The assessment required to build a Personal Finance Management application UI that should allow users to record and track their expenses.
 
 
+## Timeframe
+The assessment was completed within the given timeframe of 3 days.
+
 ## Tasks Completed:
 
 ### Login Page:
