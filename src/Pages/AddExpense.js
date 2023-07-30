@@ -1,13 +1,10 @@
 import { useTitle } from "../hook/useTitle"
 import { useStates } from "../context/StateContext";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 
 export const AddExpense = () => {
 
   useTitle('Create Expense')
-
-  const date = new Date();
 
   const navigate = useNavigate()
   const {usersList, setList} = useStates()
@@ -16,6 +13,9 @@ export const AddExpense = () => {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
+
+    const date = new Date()
+    
     setList([...usersList, {
       id: Date.now(),
       username: e.target.name.value,
@@ -23,25 +23,17 @@ export const AddExpense = () => {
       date: e.target.date.value,
       amount: e.target.amount.value,
       description: e.target.description.value,
-      updated: date.toLocaleDateString(),
+      updated: date.toLocaleTimeString(),
       createdBy: currentUser ? currentUser.username : "PeerXP"
     }])
 
     navigate('/')
-    
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'New User expense has been created.',
-      showConfirmButton: false,
-      timer: 1500
-    })
   }
 
   return (
     <div className="flex flex-col h-96 w-full justify-center mt-28 items-center">
     <h1 className="text-2xl mb-2">Create New Expense</h1>
-      <form onSubmit={handleSubmit} className="xl:w-1/4 md:w-2/5 w-5/6">
+      <form onSubmit={handleSubmit} className="xl:w-2/6 md:w-2/5 w-5/6">
         <p className="flex flex-col my-4">
             <label htmlFor="name">Name:</label>
             <input className="bg-gray-50 border border-gray-500 shadow-sm text-gray-700 text-sm block w-full p-2.5 focus:outline-none rounded-sm" type="text" id="name" name="name" placeholder="Name" maxLength="150" required/>

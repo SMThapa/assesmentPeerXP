@@ -4,13 +4,16 @@ const StateContext = createContext();
 
 export const StateProvider = ({children}) =>{
     const [user, setUser] = useState('');
-    const [usersList, setList] = useState([]);
+    const [usersList, setList] = useState(JSON.parse(localStorage.getItem('userList')) || []);
+    const [dummyList, setDummyList] = useState([])
 
     const states = {
         user,
         setUser,
         usersList,
-        setList
+        setList,
+        dummyList,
+        setDummyList
     }
 
     return(
