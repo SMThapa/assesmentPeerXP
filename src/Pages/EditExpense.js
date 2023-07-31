@@ -41,7 +41,7 @@ export const EditExpense = () => {
       <form onSubmit={handleSubmit} className="xl:w-2/6 sm:w-3/5 w-5/6">
         <p className="flex flex-col my-4">
           <label htmlFor="name">Name:</label>
-          <input className="bg-gray-50 border border-gray-500 shadow-sm text-gray-700 text-sm block w-full p-2.5 focus:outline-none rounded-sm" type="text" id="name" name="name" placeholder="Name" defaultValue={user[0].username} maxLength="150" required/>
+          <input className="bg-gray-50 border border-gray-500 shadow-sm text-gray-700 text-sm block w-full p-2.5 focus:outline-none rounded-sm" type="text" id="name" name="name" placeholder="Name" defaultValue={user[0].username} maxLength="150" autoComplete="off" required/>
         </p>
         <p className="flex flex-col my-4">
             <label htmlFor="category">Category</label>

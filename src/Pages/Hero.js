@@ -44,33 +44,35 @@ export const Hero = () => {
     const query = search.current.value;
     const newList = usersList.filter(usr => usr.username.toLowerCase().includes(query.toLowerCase()))
     setDummyList(newList) 
+    filterValue.current.value = 'null';
   }
 
   return (
-    <div className="w-full my-20 flex justify-center px-5">
+    <div className="w-full sm:my-20 flex justify-center px-5">
       <div className="lg:w-4/5 w-full">
-        <div className="flex w-full h-12 justify-between items-center mb-4">
-          <h1>MY EXPENSE MANAGER {dummyList.length !==0 && `(${dummyList.length})`}</h1>
-          <div className="flex">
-            <select ref={filterValue} onChange={handleFilterDate} className="p-2 border border-gray-400 rounded-lg cursor-pointer mr-2 w-56" placeholder="Filter by date of Expense">
-              <option value="null">-Filter by date of Expense-</option>
-              {
-                dates.map((date, index)=>(
-                  <option value={date} key={index}>{date}</option>
-                ))
-              }
-            </select>
-            
-            <div className="p-2 border border-blue-700 rounded-lg cursor-pointer text-blue-600 mr-2">
-              <form onChange={handleSearch} onSubmit={(e)=>e.preventDefault()}>
-                <input ref={search} className="text-gray-700 focus:outline-none" type="text" name="search" placeholder="Search by Name" autoComplete="off" autoCapitalize="true"/>
-                <i className="bi bi-search cursro-pointer"></i>
-              </form>
+        <div className="lg:flex h-12 w-full lg:justify-between items-center mb-4 max-md:my-24 max-lg:my-8">
+          <h1 className="max-lg:my-2">MY EXPENSE MANAGER {dummyList.length !==0 && `(${dummyList.length})`}</h1>
+          <div className="flex max-lg:justify-between">
+            <div className="flex max-sm:flex-col">
+              <select ref={filterValue} onChange={handleFilterDate} className="p-2 border border-gray-400 rounded-lg cursor-pointer mr-2 max-sm:text-sm max-sm:my-1" defaultValue={'null'}>
+                <option className="max-sm:text-sm w-full" value="null">-Filter by date-</option>
+                {
+                  dates.map((date, index)=>(
+                    <option className="max-sm:text-sm" value={date} key={index}>{date}</option>
+                  ))
+                }
+              </select>
+              
+              <div className="p-2 border border-blue-700 rounded-lg cursor-pointer text-blue-600 mr-2 max-sm:my-1">
+                <form className="flex" onChange={handleSearch} onSubmit={(e)=>e.preventDefault()}>
+                  <input ref={search} className="text-gray-700 focus:outline-none max-sm:text-xs" type="text" name="search" placeholder="Search by Name" autoComplete="off" autoCapitalize="true"/>
+                  <i className="bi bi-search cursro-pointer"></i>
+                </form>
+              </div>
             </div>
             <NavLink to="/addExpense">
-              <h1 className="p-2 border border-green-700 rounded-lg cursor-pointer text-green-600">+ New Expense</h1>
+              <h1 className="p-2 border border-green-700 rounded-lg cursor-pointer text-green-600 max-sm:text-sm">+ New Expense</h1>
             </NavLink>
-
           </div>
         </div>   
         <div className="overflow-auto">

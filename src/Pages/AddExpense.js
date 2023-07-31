@@ -35,21 +35,21 @@ export const AddExpense = () => {
     <h1 className="text-2xl mb-2">Create New Expense</h1>
       <form onSubmit={handleSubmit} className="xl:w-2/6 md:w-2/5 w-5/6">
         <p className="flex flex-col my-4">
-            <label htmlFor="name">Name:</label>
-            <input className="bg-gray-50 border border-gray-500 shadow-sm text-gray-700 text-sm block w-full p-2.5 focus:outline-none rounded-sm" type="text" id="name" name="name" placeholder="Name" maxLength="150" required/>
+          <label htmlFor="name">Name:</label>
+          <input className="bg-gray-50 border border-gray-500 shadow-sm text-gray-700 text-sm block w-full p-2.5 focus:outline-none rounded-sm" type="text" id="name" name="name" placeholder="Name" maxLength="150" autoComplete="off" required/>
         </p>
 
         <p className="flex flex-col my-4">
-            <label htmlFor="category">Category</label>
-            <select className="bg-gray-50 border border-gray-500 shadow-sm text-gray-700 text-sm block w-full p-2.5 focus:outline-none rounded-sm" name="category" id="category" required>
-                <option value="">-Select-</option>
-                <option value="Health">Health</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Travel">Travel</option>
-                <option value="Education">Education</option>
-                <option value="Books">Books</option>
-                <option value="Others">Others</option>
-            </select>
+          <label htmlFor="category">Category</label>
+          <select className="bg-gray-50 border border-gray-500 shadow-sm text-gray-700 text-sm block w-full p-2.5 focus:outline-none rounded-sm" name="category" id="category" required>
+              <option value="">-Select-</option>
+              <option value="Health">Health</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Travel">Travel</option>
+              <option value="Education">Education</option>
+              <option value="Books">Books</option>
+              <option value="Others">Others</option>
+          </select>
         </p>
 
         <div className="flex my-2">

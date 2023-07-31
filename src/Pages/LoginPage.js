@@ -25,11 +25,11 @@ export const LoginPage = () => {
       <form onSubmit={handleSubmit} className="xl:w-1/4 sm:w-1/3 w-5/6">
         <p className="flex flex-col my-6">
           <label htmlFor="userName">Name:</label>
-          <input className="bg-gray-50 border border-gray-500 shadow-sm text-gray-500 text-sm block w-full p-2.5 focus:outline-none rounded-sm" type="text" id="userName" name="name" placeholder="Username" required/>
+          <input className="bg-gray-50 border border-gray-500 shadow-sm text-gray-500 text-sm block w-full p-2.5 focus:outline-none rounded-sm" type="text" id="userName" name="name" placeholder="Username" autoComplete="off" required/>
         </p>
         <p className="flex flex-col my-6">
           <label htmlFor="email">Email:</label>
-          <input className="bg-gray-50 border border-gray-500 shadow-sm text-gray-500 text-sm block w-full p-2.5 focus:outline-none rounded-sm"  type="email" id="email" name="email" placeholder="Email address" required/>
+          <input className="bg-gray-50 border border-gray-500 shadow-sm text-gray-500 text-sm block w-full p-2.5 focus:outline-none rounded-sm"  type="email" id="email" name="email" placeholder="Email address" autoComplete="off" required/>
         </p>
         <p className="flex flex-col my-6">
           <label htmlFor="password">Enter Password:</label>
